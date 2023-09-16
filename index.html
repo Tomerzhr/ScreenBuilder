@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="description" content="Building web page easily without any knowledge and free " />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Google fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <!-- Fontawsome -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <link rel="stylesheet" href="style.css" />
+    <title>Screen Builder</title>
+  </head>
+
+  <body>
+    <main>
+      <section class="menu">
+        <div class="menu-title">
+          <p>User Editing Panel</p>
+        </div>
+
+        <div class="menu-tabs" id="tabs">
+          <div class="Button active">
+            <img src="img/home-icon-silhouette.png" width="20" alt="icon" />
+            <button id="advanced-btn" class="tablinks">Main</button>
+          </div>
+
+          <div class="Button">
+            <img src="img/main-menu.png" width="20" alt="icon" />
+            <button data-name="btn" class="tablinks">Element</button>
+          </div>
+
+          <div class="Button">
+            <img src="img/font.png" width="25" alt="icon" />
+            <button id="font-btn" class="tablinks">Font</button>
+          </div>
+        </div>
+
+        <div class="content">
+          <!-- element tab -->
+          <article id="Element" class="tabcontent">
+            <!-- layout -->
+            <div class="box">
+              <h2 class="box-title"><i class="fa-solid fa-caret-down"></i>Layout</h2>
+
+              <hr class="box-title-line" />
+
+              <div class="properties">
+                <div class="element-type layout">
+                  <label class="box-label" for="element-type">Element Type</label>
+                  <select class="select-element-type input-main" name="element-type" id="element-type">
+                    <option value="div">div</option>
+                  </select>
+                </div>
+
+                <div class="element-width layout">
+                  <label class="box-label" for="element-width">Width <span class="units">(px)</span></label>
+                  <input type="number" class="input-element-width input-main" id="element-width" required />
+                </div>
+
+                <div class="element-height layout">
+                  <label class="box-label" for="element-height">Height <span class="units">(px)</span></label>
+                  <input type="number" class="input-element-height input-main" id="element-height" required />
+                </div>
+
+                <hr class="box-title-line" />
+
+                <div class="element-margin layout">
+                  <label class="box-label" for="element-margin-top">Margin <span class="units">(px)</span></label>
+                  <input
+                    type="number"
+                    aria-label="element-margin-top"
+                    class="input-element-margin input-main"
+                    id="element-margin-top" />
+                  <input
+                    type="number"
+                    aria-label="element-margin-right"
+                    class="input-element-margin input-main"
+                    id="element-margin-right" />
+                  <input
+                    type="number"
+                    aria-label="element-margin-bottom"
+                    class="input-element-margin input-main"
+                    id="element-margin-bottom" />
+                  <input
+                    type="number"
+                    aria-label="element-margin-left"
+                    class="input-element-margin input-main"
+                    id="element-margin-left" />
+                </div>
+
+                <div class="element-padding layout">
+                  <label class="box-label" for="element-padding-top">Padding <span class="units">(px)</span></label>
+                  <input
+                    type="number"
+                    aria-label="element-padding-top"
+                    class="input-element-padding input-main"
+                    id="element-padding-top" />
+                  <input
+                    type="number"
+                    aria-label="element-padding-right"
+                    class="input-element-padding input-main"
+                    id="element-padding-right" />
+                  <input
+                    type="number"
+                    aria-label="element-padding-bottom"
+                    class="input-element-padding input-main"
+                    id="element-padding-bottom" />
+                  <input
+                    type="number"
+                    aria-label="element-padding-left"
+                    class="input-element-padding input-main"
+                    id="element-padding-left" />
+                </div>
+              </div>
+            </div>
+            <!-- style -->
+            <div class="box">
+              <h2 class="box-title"><i class="fa-solid fa-caret-down"></i>Style</h2>
+              <hr class="box-title-line" />
+
+              <div class="properties">
+                <div class="element-background style">
+                  <label class="box-label" for="element-background">Background</label>
+                  <input type="color" value="#FFFFFF" class="input-element-background input-main" id="element-background" />
+                </div>
+
+                <div class="element-border style">
+                  <label class="box-label" for="element-border-number">Border</label>
+                  <input type="number" class="input-element-border input-main" id="element-border-number" />
+                  <select type="text" class="input-element-border input-main" id="element-border-type">
+                    <option value="solid">solid</option>
+                    <option value="dotted">dotted</option>
+                    <option value="double">double</option>
+                    <option value="dashed">dashed</option>
+                  </select>
+                  <input
+                    type="color"
+                    aria-label="element-border-color"
+                    class="input-element-border input-main"
+                    id="element-border-color" />
+                </div>
+
+                <div class="element-border-radios style">
+                  <label class="box-label" for="element-border-radios">Border Radios <span class="units">(px)</span></label>
+                  <input type="number" class="input-element-border-radios input-main" id="element-border-radios" />
+                </div>
+
+                <div class="element-shadow style">
+                  <label class="box-label" for="element-shadow-x">Shadow <span class="units">(px)</span></label>
+                  <input
+                    type="number"
+                    aria-label="element-shadow-x"
+                    class="input-element-shadow input-main input-shadow"
+                    id="element-shadow-x" />
+                  <input
+                    type="number"
+                    aria-label="element-shadow-y"
+                    class="input-element-shadow input-main input-shadow"
+                    id="element-shadow-y" />
+                  <input
+                    type="number"
+                    aria-label="element-shadow-blur"
+                    class="input-element-shadow input-main input-shadow"
+                    id="element-shadow-blur" />
+                  <input
+                    type="number"
+                    aria-label="element-shadow-spread"
+                    class="input-element-shadow input-main input-shadow"
+                    id="element-shadow-spread" />
+                  <input
+                    type="color"
+                    aria-label="element-shadow-color"
+                    class="input-element-shadow input-main input-shadow"
+                    id="element-shadow-color" />
+                </div>
+
+                <div class="element-opacity style">
+                  <label class="box-label" for="element-opacity">Opacity</label>
+                  <input type="number" class="input-element-opacity input-main" id="element-opacity" />
+                </div>
+              </div>
+            </div>
+
+            <!-- display -->
+            <div class="box">
+              <h2 class="box-title"><i class="fa-solid fa-caret-down"></i>Display</h2>
+              <hr class="box-title-line" />
+
+              <div class="properties">
+                <div class="element-display display">
+                  <label class="box-label" for="element-display">Display</label>
+                  <select type="text" class="input-element-display input-main" id="element-display">
+                    <option value="block">block</option>
+                    <option value="inline">inline</option>
+                    <option value="flex">flex</option>
+                  </select>
+                </div>
+
+                <div class="flex-direction display">
+                  <label class="box-label" for="element-flex-direction">Flex Direction</label>
+                  <select type="text" class="input-flex-direction input-main" id="element-flex-direction">
+                    <option value="unset">unset</option>
+                    <option value="column">column</option>
+                    <option value="row">row</option>
+                    <option value="column-reverse">column-reverse</option>
+                    <option value="row-reverse">row-reverse</option>
+                  </select>
+                </div>
+
+                <div class="align-items display">
+                  <label class="box-label" for="element-align-items">Align Items</label>
+                  <select type="text" class="input-align-items input-main" id="element-align-items">
+                    <option value="unset">unset</option>
+                    <option value="center">center</option>
+                    <option value="start">start</option>
+                    <option value="end">end</option>
+                  </select>
+                </div>
+
+                <div class="justify-content display">
+                  <label class="box-label" for="element-justify-content">justify-content</label>
+                  <select type="text" class="input-justify-content input-main" id="element-justify-content">
+                    <option value="unset">unset</option>
+                    <option value="center">center</option>
+                    <option value="start">start</option>
+                    <option value="end">end</option>
+                    <option value="space-around">space-around</option>
+                    <option value="space-between">space-between</option>
+                    <option value="space-evenly">space-evenly</option>
+                  </select>
+                </div>
+
+                <div class="overflow display">
+                  <label class="box-label" for="element-overflow">Overflow</label>
+                  <select type="text" class="input-overflow input-main" id="element-overflow">
+                    <option value="unset">unset</option>
+                    <option value="visible">visible</option>
+                    <option value="hidden">hidden</option>
+                    <option value="scroll">scroll</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="buttons">
+              <button class="add-element-btn btn-style">Add</button>
+              <button class="delete-element-btn btn-style">Delete</button>
+            </div>
+          </article>
+
+          <!-- font tab -->
+          <article id="Font" class="tabcontent">
+            <!-- property -->
+            <div class="box">
+              <h2 class="box-title"><i class="fa-solid fa-caret-down"></i>Property</h2>
+              <hr class="box-title-line" />
+
+              <div class="properties">
+                <div class="font-type property">
+                  <label class="box-label" for="element-type">Headings Type</label>
+                  <select class="select-font-type input-main" name="font-type" id="font-type">
+                    <option value="h1">h1</option>
+                    <option value="h2">h2</option>
+                    <option value="h3">h3</option>
+                    <option value="h4">h4</option>
+                    <option value="h5">h5</option>
+                    <option value="h6">h6</option>
+                    <option value="p">p</option>
+                  </select>
+                </div>
+
+                <div class="font-size property">
+                  <label class="box-label" for="font-size">Font Size <span class="units">(px)</span></label>
+                  <input type="number" class="font-size input-main" id="font-size" value="" />
+                </div>
+
+                <div class="font-weight property">
+                  <label class="box-label" for="font-weight">Font Weight <span class="units">(px)</span></label>
+                  <input
+                    type="number"
+                    class="font-weight input-main"
+                    min="100"
+                    value="400"
+                    step="100"
+                    max="900"
+                    id="font-weight" />
+                </div>
+              </div>
+            </div>
+            <!-- style -->
+            <div class="box">
+              <h2 class="box-title"><i class="fa-solid fa-caret-down"></i>Style</h2>
+              <hr class="box-title-line" />
+
+              <div class="properties">
+                <div class="font-family style">
+                  <label class="box-label" for="font-family">Font Family</label>
+                  <select type="text" class="font-family-select input-main" id="font-family">
+                    <option value="serif">serif</option>
+                    <option value="sans-serif">sans-serif</option>
+                    <option value="monospace">monospace</option>
+                    <option value="cursive">cursive</option>
+                    <option value="fantasy">fantasy</option>
+                  </select>
+                </div>
+
+                <div class="font-color style">
+                  <label class="box-label" for="font-color">Color</label>
+                  <input type="color" class="font-color input-main" id="font-color" />
+                </div>
+
+                <div class="font-text-align style">
+                  <label class="box-label" for="font-text-align">Text-Align</label>
+                  <select type="text" class="font-text-align input-main" id="font-text-align">
+                    <option value="center">center</option>
+                    <option value="left">left</option>
+                    <option value="right">right</option>
+                    <option value="bottom">bottom</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- textarea -->
+
+            <div class="box">
+              <h2 class="box-title"><i class="fa-solid fa-caret-down"></i>Text</h2>
+              <hr class="box-title-line" />
+
+              <div class="properties">
+                <textarea
+                  class="input-textarea"
+                  name="font-text"
+                  id="font-text"
+                  cols="30"
+                  rows="5"
+                  placeholder="Enter Your Text Here..."></textarea>
+              </div>
+            </div>
+            <div class="buttons">
+              <button class="add-font-btn btn-style">Add</button>
+              <button class="delete-font-btn btn-style">Delete</button>
+            </div>
+          </article>
+
+          <!-- Main tab -->
+          <article id="Main" class="tabcontent">
+            <!-- global property-->
+            <div class="box">
+              <h2 class="box-title"><i class="fa-solid fa-caret-down"></i>Global Display</h2>
+              <hr class="box-title-line" />
+
+              <div class="properties">
+                <div class="global-display display">
+                  <label class="box-label" for="global-display">Display</label>
+                  <select type="text" class="input-global-display input-main" id="global-display">
+                    <option value="block">block</option>
+                    <option value="inline">inline</option>
+                    <option value="flex">flex</option>
+                  </select>
+                </div>
+
+                <div class="flex-direction-main display">
+                  <label class="box-label" for="global-flex-direction">Flex Direction</label>
+                  <select type="text" class="input-flex-direction input-main" id="global-flex-direction">
+                    <option value="unset">unset</option>
+                    <option value="column">column</option>
+                    <option value="row">row</option>
+                    <option value="column-reverse">column-reverse</option>
+                    <option value="row-reverse">row-reverse</option>
+                  </select>
+                </div>
+
+                <div class="align-items-main display">
+                  <label class="box-label" for="global-align-items">Align Items</label>
+                  <select type="text" class="input-align-items input-main" id="global-align-items">
+                    <option value="unset">unset</option>
+                    <option value="center">center</option>
+                    <option value="start">start</option>
+                    <option value="end">end</option>
+                  </select>
+                </div>
+
+                <div class="justify-content-main display">
+                  <label class="box-label" for="global-justify-content">justify-content</label>
+                  <select type="text" class="input-justify-content input-main" id="global-justify-content">
+                    <option value="unset">unset</option>
+                    <option value="center">center</option>
+                    <option value="start">start</option>
+                    <option value="end">end</option>
+                    <option value="space-around">space-around</option>
+                    <option value="space-between">space-between</option>
+                    <option value="space-evenly">space-evenly</option>
+                  </select>
+                </div>
+
+                <div class="overflow display">
+                  <label class="box-label" for="global-overflow">Overflow</label>
+                  <select type="text" class="input-overflow input-main" id="global-overflow">
+                    <option value="unset">unset</option>
+                    <option value="visible">visible</option>
+                    <option value="hidden">hidden</option>
+                    <option value="scroll">scroll</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- global style -->
+            <div class="box">
+              <h2 class="box-title"><i class="fa-solid fa-caret-down"></i>Global Style</h2>
+              <hr class="box-title-line" />
+
+              <div class="properties">
+                <div class="global-background style">
+                  <label class="box-label" for="global-background">Background</label>
+                  <input type="color" value="#FFFFFF" class="input-global-background input-main" id="global-background" />
+                </div>
+              </div>
+            </div>
+            <div class="buttons">
+              <button class="apply-global-btn btn-style">Apply</button>
+              <button class="undo-global-btn btn-style">Undo</button>
+            </div>
+          </article>
+        </div>
+
+        <div class="bottom-menu">
+          <button class="save-btn">Save</button>
+          <button class="clear-btn">Clear</button>
+        </div>
+      </section>
+
+      <section class="workDesk">
+        <i class="fa-solid fa-ellipsis-vertical close"></i>
+        <div class="container"></div>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
