@@ -30,10 +30,10 @@ openContent("Main");
 
 // selected tab
 
-var selectedButton = document.querySelectorAll(".Button");
-for (var i = 0; i < selectedButton.length; i++) {
+let selectedButton = document.querySelectorAll(".Button");
+for (let i = 0; i < selectedButton.length; i++) {
   selectedButton[i].addEventListener("click", function () {
-    var current = document.getElementsByClassName("active");
+    let current = document.getElementsByClassName("active");
     current[0].className = current[0].className.replace(" active", "");
     this.className += " active";
   });
